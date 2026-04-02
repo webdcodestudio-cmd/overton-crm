@@ -1,0 +1,93 @@
+/* ── BASE ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-instrument);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: all 0.22s;
+  white-space: nowrap;
+}
+
+/* ── SIZES ── */
+.sm {
+  font-size: 0.86rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+}
+
+.md {
+  font-size: 0.9rem;
+  padding: 0.82rem 1.6rem;
+  border-radius: 10px;
+}
+
+.lg {
+  font-size: 0.95rem;
+  padding: 0.82rem 1.8rem;
+  border-radius: 10px;
+}
+
+/* ── VARIANTS ── */
+
+/* Primary — Blue filled */
+.primary {
+  background: #3e68ff;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(62, 104, 255, 0.45);
+}
+
+.primary:hover {
+  background: #2a4fd9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(62, 104, 255, 0.5);
+}
+
+/* Ghost — Transparent (dark background pe) */
+.ghost {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Outline — Light background pe */
+.outline {
+  background: transparent;
+  color: #0b0b22;
+  border: 1.5px solid #e3e7f4;
+}
+
+.outline:hover {
+  border-color: #3e68ff;
+  color: #3e68ff;
+}
+
+/* Dark — Dark filled */
+.dark {
+  background: #0b0b22;
+  color: #ffffff;
+}
+
+.dark:hover {
+  background: #1a2340;
+  transform: translateY(-1px);
+}
+
+/* White — White filled (dark bg pe) */
+.white {
+  background: #ffffff;
+  color: #0b0b22;
+}
+
+.white:hover {
+  background: #f5f7ff;
+  transform: translateY(-1px);
+}

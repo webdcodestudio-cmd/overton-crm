@@ -1,0 +1,32 @@
+export const testimonials = [
+  {
+    id: 1,
+    quote: "Within a week of Overton, we could see every single lead. We closed 4 deals in the first month we couldn't have tracked before.",
+    name: "Rajesh Patel",
+    role: "Director",
+    company: "Patel Realty Group, Ahmedabad",
+    initials: "RP",
+    color: "#3e68ff",
+    rating: 5,
+  },
+  {
+    id: 2,
+    quote: "The RERA document generation alone paid for the entire year's subscription. It used to take 3-4 hours per deal. Now 45 seconds.",
+    name: "Sunita Mehta",
+    role: "CEO",
+    company: "Sunita Developers, Surat",
+    initials: "SM",
+    color: "#0EA05B",
+    rating: 5,
+  },
+  {
+    id: 3,
+    quote: "I manage 12 brokers across two offices. Now I see every lead, every follow-up, every stage — in real time.",
+    name: "Ankit Joshi",
+    role: "Managing Director",
+    company: "Joshi Properties, Pune",
+    initials: "AJ",
+    color: "#7C3AED",
+    rating: 5,
+  },
+];
