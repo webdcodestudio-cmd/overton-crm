@@ -1,0 +1,109 @@
+# Overton CRM — llms.txt
+
+# AI Context File
+
+# https://overton.in/llms.txt
+
+## Company
+
+* Name: Overton CRM
+* Website: https://overton.in
+* Founded: 2025
+* Location: Ahmedabad, Gujarat, India
+* Category: CRM Software, Real Estate Software, SaaS
+* Email: [info@overton.in](mailto:info@overton.in)
+* Support: [support@overton.in](mailto:support@overton.in)
+* Phone: +91 9023016487
+
+## Overview
+
+Overton CRM is an AI-powered real estate CRM platform designed for Indian real estate developers, brokers, mandate firms, and sales teams. The platform helps real estate businesses manage leads, inventory, customer communication, payments, documents, and sales operations from a single system.
+
+## Primary Use Cases
+
+* Real estate developers managing projects, inventory, bookings, and customer payments
+* Real estate brokers handling leads from property portals and marketing campaigns
+* Mandate firms managing multiple projects and developer relationships
+* Sales teams tracking inquiries, follow-ups, site visits, and conversions
+
+## Core Features
+
+* AI Lead Qualification
+* AI Priority List
+* AI Sales Insights & Reporting
+* Inventory Management
+* RERA Document Generation
+* WhatsApp CRM
+* Lead Management
+* Site Visit Scheduling
+* Stage-wise Payment Tracking
+* Call Recording & Activity Tracking
+* Role-Based Access Control
+* Mobile Access for Sales Teams
+
+## Integrations
+
+Overton CRM supports integrations with:
+
+* 99acres
+* MagicBricks
+* Housing.com
+* Meta Ads
+* Google Ads
+* WhatsApp Business
+* Email Platforms
+* Excel & CSV Imports
+
+## Pricing
+
+* Starter Plan: From ₹599/month
+* Growth Plan: From ₹1,499/month
+* Professional Plan: From ₹2,999/month
+* Enterprise / Scale Plans: Custom Pricing
+* Free Trial: 30 Days
+* Credit Card Required: No
+
+## Target Market
+
+### Geography
+
+India
+
+### Customer Types
+
+* Real Estate Developers
+* Property Brokers
+* Real Estate Agencies
+* Mandate Firms
+* Builder Sales Teams
+
+## Key Differentiators
+
+* Built specifically for Indian real estate workflows
+* AI-powered lead qualification and prioritization
+* RERA-focused document workflows
+* Property portal integrations
+* Real estate inventory management
+* Transparent pricing and free trial availability
+
+## Contact Information
+
+* Website: https://overton.in
+* Email: [info@overton.in](mailto:info@overton.in)
+* Support: [support@overton.in](mailto:support@overton.in)
+* Phone: +91 9023016487
+* Address: Ahmedabad, Gujarat, India
+
+## Social Profiles
+
+* LinkedIn: https://www.linkedin.com/company/115114255
+* Facebook: https://www.facebook.com/profile.php?id=61570960408144
+* Instagram: https://www.instagram.com/overton.crm
+* YouTube: https://www.youtube.com/@OvertonCRM
+
+## Public Pages
+
+* Home: https://overton.in
+* Privacy Policy: https://overton.in/privacy-policy
+* Terms of Service: https://overton.in/terms-of-service
+* Refund Policy: https://overton.in/refund-policy

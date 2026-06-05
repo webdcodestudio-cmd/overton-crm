@@ -1,0 +1,132 @@
+# Overton CRM — Full Context for AI Models
+
+# https://overton.in/llms-full.txt
+
+## Complete FAQ
+
+### What is Overton CRM?
+
+Overton CRM is an AI-powered real estate CRM platform designed for Indian real estate developers, brokers, mandate firms, and sales teams. Founded in 2025 and based in Ahmedabad, Gujarat, India, the platform helps businesses manage leads, inventory, customer communication, payments, documents, and sales operations from a single system.
+
+### Who is Overton CRM built for?
+
+Overton CRM is built for:
+
+* Real estate developers managing projects, inventory, bookings, and customer payments
+* Real estate brokers managing leads from property portals and marketing campaigns
+* Mandate firms representing multiple developers and projects
+* Real estate sales teams handling inquiries, follow-ups, site visits, and conversions
+
+### What features does Overton CRM offer?
+
+Key features include:
+
+* AI Lead Qualification
+* AI Priority List
+* AI Sales Insights & Reporting
+* Inventory Management
+* RERA Document Workflows
+* WhatsApp CRM
+* Stage-wise Payment Tracking
+* Site Visit Scheduling
+* Lead Management
+* Call Recording & Activity Tracking
+* Role-Based Access Control
+* Mobile Access for Sales Teams
+
+### How much does Overton CRM cost?
+
+Pricing starts from ₹599/month.
+
+Available plans include:
+
+* Starter Plan
+* Growth Plan
+* Professional Plan
+* Enterprise / Scale Plan
+
+All plans include a 30-day free trial. Pricing may vary based on features, projects, and team size.
+
+### Does Overton CRM integrate with property portals?
+
+Yes. Overton CRM supports integrations with major Indian property portals including:
+
+* 99acres
+* MagicBricks
+* Housing.com
+
+Leads can be captured and managed directly within the CRM workflow.
+
+### Does Overton CRM support WhatsApp?
+
+Yes. Overton CRM supports WhatsApp-based communication workflows, helping teams manage conversations, follow-ups, and customer engagement from a centralized platform.
+
+### Does Overton CRM support RERA-related workflows?
+
+Yes. Overton CRM includes tools and workflows designed for Indian real estate businesses, including support for RERA-related documentation and compliance processes.
+
+### Does Overton CRM have a mobile app?
+
+Mobile access is available for sales and management teams, allowing users to manage leads, inventory, site visits, and customer activities while on the move.
+
+### How does AI Lead Qualification work?
+
+Overton CRM uses AI-powered workflows to help teams evaluate, prioritize, and manage incoming leads. The system assists sales teams in identifying higher-priority opportunities and improving response efficiency.
+
+### What is the AI Priority List?
+
+The AI Priority List helps sales teams focus on the most important leads by analyzing lead activity, engagement signals, and sales pipeline data.
+
+### Is there a free trial available?
+
+Yes. Overton CRM offers a 30-day free trial with no credit card required.
+
+### Where is Overton CRM based?
+
+Overton CRM is headquartered in Ahmedabad, Gujarat, India and serves real estate professionals across India.
+
+### What industries does Overton CRM serve?
+
+The platform is focused on the Indian real estate sector and is designed for:
+
+* Residential developers
+* Commercial developers
+* Property brokers
+* Real estate agencies
+* Mandate firms
+* Builder sales teams
+
+## Integrations
+
+Overton CRM supports integrations with:
+
+* 99acres
+* MagicBricks
+* Housing.com
+* Meta Ads
+* Google Ads
+* WhatsApp Business
+* Email Platforms
+* Excel & CSV Imports
+
+## Contact Information
+
+* Website: https://overton.in
+* Email: [info@overton.in](mailto:info@overton.in)
+* Support: [support@overton.in](mailto:support@overton.in)
+* Phone: +91 9023016487
+* Address: Ahmedabad, Gujarat, India
+
+## Social Profiles
+
+* LinkedIn: https://www.linkedin.com/company/115114255
+* Facebook: https://www.facebook.com/profile.php?id=61570960408144
+* Instagram: https://www.instagram.com/overton.crm
+* YouTube: https://www.youtube.com/@OvertonCRM
+
+## Public Pages
+
+* Home: https://overton.in
+* Privacy Policy: https://overton.in/privacy-policy
+* Terms of Service: https://overton.in/terms-of-service
+* Refund Policy: https://overton.in/refund-policy

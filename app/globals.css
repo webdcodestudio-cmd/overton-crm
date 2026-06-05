@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── COLORS ── */
+  --blue: #3d5af1;
+  --blue-deep: #2a3fd9;
+  --blue-light: #eef1fe;
+  --blue-pale: #f5f7ff;
+  --navy: #0f1629;
+  --navy2: #1a2340;
+  --slate: #4a5578;
+  --muted: #6b7499;
+  --border: #e3e7f4;
+  --border2: #cdd3ec;
+  --white: #ffffff;
+  --off: #f8f9fe;
+  --surface: #f1f4fb;
+  --green: #0ea05b;
+  --green-bg: #edfbf4;
+  --amber: #d97706;
+  --ai: #7c3aed;
+  --ai-light: #f3effe;
+
+  /* ── BACKGROUND ── */
+  --background: #fafbff;
+  --foreground: #0f1629;
 }
 
+/* ══════════════════════════════
+   TAILWIND THEME
+══════════════════════════════ */
 @theme inline {
+  /* COLORS */
+  --color-brand: var(--blue);
+  --color-brand-deep: var(--blue-deep);
+  --color-brand-light: var(--blue-light);
+  --color-brand-pale: var(--blue-pale);
+  --color-dark: var(--navy);
+  --color-dark2: var(--navy2);
+  --color-slate: var(--slate);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border2: var(--border2);
+  --color-surface: var(--surface);
+  --color-off: var(--off);
+  --color-green: var(--green);
+  --color-green-bg: var(--green-bg);
+  --color-ai: var(--ai);
+  --color-ai-light: var(--ai-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* FONTS */
+  --font-heading: var(--font-BricolageGrotesque);
+  --font-body: var(--font-instrument);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ══════════════════════════════
+   BASE STYLES
+══════════════════════════════ */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-instrument);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── HEADINGS ── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-BricolageGrotesque);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* ── PARAGRAPHS ── */
+p {
+  font-family: var(--font-instrument);
+  line-height: 1.75;
+}
+
+/* ── LINKS ── */
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+body .calendly-overlay {
+  z-index: 999999 !important;
+}
+
+body .calendly-popup {
+  z-index: 999999 !important;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(61, 90, 241, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(61, 90, 241, 0.9);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.aifs-prog-paused {
+  animation-play-state: paused;
 }

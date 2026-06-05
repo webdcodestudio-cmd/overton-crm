@@ -1,0 +1,25 @@
+{
+  "name": "Overton CRM",
+  "short_name": "Overton",
+  "description": "India's #1 AI-Powered Real Estate CRM for Developers & Brokers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1629",
+  "theme_color": "#3D5AF1",
+  "lang": "en-IN",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
