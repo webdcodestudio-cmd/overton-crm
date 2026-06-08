@@ -48,7 +48,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 599,
+        monthlyPrice: 780,
         desc: "Perfect for getting started with real estate CRM.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -73,7 +73,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 1999,
+        monthlyPrice: 2599,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -102,7 +102,7 @@ const tabs: TabData[] = [
       {
         id: "professional",
         name: "Professional",
-        monthlyPrice: 2999,
+        monthlyPrice: 3899,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -170,7 +170,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 599,
+        monthlyPrice: 780,
         desc: "Perfect for individual brokers getting started.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -193,7 +193,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 1499,
+        monthlyPrice: 1950,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -220,7 +220,7 @@ const tabs: TabData[] = [
       {
         id: "professional",
         name: "Professional",
-        monthlyPrice: 2499,
+        monthlyPrice: 3250,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -287,7 +287,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 599,
+        monthlyPrice: 780,
         desc: "Perfect for getting started with CRM.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -312,7 +312,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 1999,
+        monthlyPrice: 2599,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -340,7 +340,7 @@ const tabs: TabData[] = [
       {
         id: "Professional",
         name: "Professional",
-        monthlyPrice: 2999,
+        monthlyPrice: 3899,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -535,14 +535,15 @@ export default function PricingSection() {
           </h3>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-6 text-sm text-[#6B7499]">
             {[
-              "✓ Additional User",
+              "✓ Additional User Charge",
               "✓ Additional Project",
               "✓ Website Form Integration",
               "✓ WhatsApp Integration",
               "✓ Email Integration",
               "✓ Mass Email Campaign",
               "✓ IVR Integration",
-              "✓ AI Feature Integration",
+              "✓ Any Other AI Feature Integration",
+              "✓ Customization Charge (upto 5 Fields)",
             ].map((item) => (
               <span
                 key={item}
@@ -574,7 +575,7 @@ export default function PricingSection() {
 // ── PRICING CARD ──
 function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
   const annualPrice = plan.monthlyPrice
-    ? Math.round(plan.monthlyPrice * 0.8)
+    ? Math.round(plan.monthlyPrice * 0.7)
     : null;
   const price = isAnnual ? annualPrice : plan.monthlyPrice;
 

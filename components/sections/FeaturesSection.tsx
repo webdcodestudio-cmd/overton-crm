@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Target,
   Package,
@@ -16,6 +18,7 @@ import {
   BarChart2,
   ArrowRight,
 } from "lucide-react";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CalendlyButton from "../ui/CalendlyButton";
@@ -47,13 +50,13 @@ const features = [
     iconBg: "bg-[#EEF1FE]",
   },
   {
-    icon: <MessageCircle size={20} />,
-    tag: "All Plans",
-    tagColor: "bg-[#F0FDF4] text-[#0EA05B]",
-    title: "WhatsApp Integration",
+    icon: <CreditCard size={20} />,
+    tag: "Developer + Scale",
+    tagColor: "bg-[#EEF1FE] text-[#3D5AF1]",
+    title: "Stage-wise Payment Tracking",
     description:
-      "Sell on the channel your buyers already use. Follow-ups, floor plans, payment reminders on WhatsApp — all tracked in CRM. Every conversation logged automatically.",
-    iconBg: "bg-[#EDFBF4]",
+      "Configure milestones per project. Track every buyer's schedule. See overdue payments instantly. Send reminders with payment links.",
+    iconBg: "bg-[#EEF1FE]",
   },
   {
     icon: <FileText size={20} />,
@@ -61,7 +64,7 @@ const features = [
     tagColor: "bg-[#EDFBF4] text-[#0EA05B]",
     title: "RERA Document Generation",
     description:
-      "KYC documents, allotment letters, agreements for sale, demand letters — generated as PDFs in 60 seconds. RERA-ready templates built in. No manual typing.",
+      "KYC documents, allotment letters, agreements for sale, demand letters, possession letters, and other project-specific documents are generated automatically as professional PDFs the moment a deal closes. Built-in RERA-ready templates ensure consistency, accuracy, and compliance across every document. Buyer details, unit information, payment schedules, and project data are auto-filled instantly, eliminating repetitive manual work, reducing human errors, and helping your team process sales faster without compliance risks.",
     iconBg: "bg-[#EDFBF4]",
     preview: [
       { label: "KYC Document", width: "100%", color: "#0EA05B" },
@@ -79,13 +82,13 @@ const features = [
     iconBg: "bg-[#EEF1FE]",
   },
   {
-    icon: <CreditCard size={20} />,
-    tag: "Developer + Scale",
-    tagColor: "bg-[#EEF1FE] text-[#3D5AF1]",
-    title: "Stage-wise Payment Tracking",
+    icon: <MessageCircle size={20} />,
+    tag: "All Plans",
+    tagColor: "bg-[#F0FDF4] text-[#0EA05B]",
+    title: "WhatsApp Integration",
     description:
-      "Configure milestones per project. Track every buyer's schedule. See overdue payments instantly. Send reminders with payment links.",
-    iconBg: "bg-[#EEF1FE]",
+      "Sell on the channel your buyers already use. Follow-ups, floor plans, payment reminders on WhatsApp — all tracked in CRM. Every conversation logged automatically.",
+    iconBg: "bg-[#EDFBF4]",
   },
   {
     icon: <Phone size={20} />,
@@ -218,10 +221,10 @@ export default function FeaturesSection() {
           </div>
 
           {/* Inventory */}
-          <SimpleCard feature={features[1]} />
+          <InventoryCard />
 
           {/* WhatsApp */}
-          <SimpleCard feature={features[2]} />
+          <PaymentCard />
         </div>
 
         {/* ── ROW 2 — RERA (big 2col) + Site Visit + Payment ── */}
@@ -241,9 +244,14 @@ export default function FeaturesSection() {
             </h3>
             <p className="text-sm text-[#4A5578] leading-relaxed mb-5">
               KYC documents, allotment letters, agreements for sale, demand
-              letters — all generated as professional PDFs the moment a deal
-              closes. RERA-ready templates built in. No manual typing, no
-              compliance risk.
+              letters, possession letters, and other project-specific documents
+              are generated automatically as professional PDFs the moment a deal
+              closes. Built-in RERA-ready templates ensure consistency,
+              accuracy, and compliance across every document. Buyer details,
+              unit information, payment schedules, and project data are
+              auto-filled instantly, eliminating repetitive manual work,
+              reducing human errors, and helping your team process sales faster
+              without compliance risks.
             </p>
             <div className="bg-[#F8F9FE] rounded-2xl p-4 border border-[#E3E7F4] mt-auto">
               {[
@@ -273,7 +281,7 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* Site Visit + Payment stacked */}
+          {/* Site Visit + WhatsApp stacked */}
           <div className="flex flex-col gap-4">
             <SimpleCard feature={features[4]} />
             <SimpleCard feature={features[5]} />
@@ -372,6 +380,218 @@ interface Feature {
   description: string;
   iconBg: string;
   preview?: PreviewItem[];
+}
+
+// ── INVENTORY CARD WITH PIE CHART ──
+const inventoryData = [
+  { name: "Available", value: 50, color: "#0EA05B" },
+  { name: "Sold", value: 30, color: "#3D5AF1" },
+  { name: "Blocked", value: 20, color: "#F59E0B" },
+];
+
+function InventoryCard() {
+  return (
+    <div className="bg-white rounded-3xl border border-[#E3E7F4] hover:border-[#3D5AF1]/30 hover:shadow-[0_8px_40px_rgba(61,90,241,0.07)] transition-all duration-300 p-7 flex flex-col h-full">
+      {/* TOP ROW */}
+      <div className="flex items-start justify-between mb-5">
+        <div className="w-11 h-11 rounded-2xl bg-[#EEF1FE] flex items-center justify-center text-[#3D5AF1]">
+          <Package size={20} />
+        </div>
+        <span className="text-[11px] font-bold px-3 py-1.5 rounded-full bg-[#EEF1FE] text-[#3D5AF1]">
+          Developer + Mandate
+        </span>
+      </div>
+
+      {/* TITLE */}
+      <h3 className="text-base font-extrabold text-[#0F1629] mb-2">
+        Inventory Management
+      </h3>
+
+      {/* DESC */}
+      <p className="text-sm text-[#4A5578] leading-relaxed mb-5">
+        Project-wise, building-wise, block-wise, unit-wise. Live availability
+        updated when deals close. No double bookings ever.
+      </p>
+
+      {/* PIE CHART + LEGEND */}
+      <div className="bg-[#F8F9FE] rounded-2xl p-4 border border-[#E3E7F4] mt-auto">
+        <div className="flex items-center justify-between gap-4">
+          {/* PIE CHART */}
+          <div className="shrink-0">
+            <PieChart width={90} height={90}>
+              <Pie
+                data={inventoryData}
+                cx={40}
+                cy={40}
+                innerRadius={25}
+                outerRadius={42}
+                paddingAngle={2}
+                dataKey="value"
+                strokeWidth={0}
+              >
+                {inventoryData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip
+                formatter={(value) => [`${value}%`, ""]}
+                contentStyle={{
+                  fontSize: "11px",
+                  borderRadius: "8px",
+                  border: "1px solid #E3E7F4",
+                  padding: "4px 8px",
+                }}
+              />
+            </PieChart>
+          </div>
+
+          {/* LEGEND */}
+          <div className="flex flex-col gap-2 flex-1">
+            {inventoryData.map((item) => (
+              <div
+                key={item.name}
+                className="flex items-center justify-between gap-2"
+              >
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-2.5 h-2.5 rounded-full shrink-0"
+                    style={{ background: item.color }}
+                  />
+                  <span className="text-xs text-[#6B7499]">{item.name}</span>
+                </div>
+                <span
+                  className="text-xs font-extrabold"
+                  style={{ color: item.color }}
+                >
+                  {item.value}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* TOTAL UNITS */}
+        <div className="mt-3 pt-3 border-t border-[#E3E7F4] flex items-center justify-between">
+          <span className="text-xs text-[#6B7499]">Total Units</span>
+          <span className="text-xs font-extrabold text-[#0F1629]">
+            120 Units
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── PAYMENT TRACKING CARD ──
+const paymentStages = [
+  {
+    label: "Booking Amount",
+    percent: 5,
+    color: "#7C3AED",
+    status: null,
+  },
+  {
+    label: "On Agreement",
+    percent: 10,
+    color: "#7C3AED",
+    status: null,
+  },
+  {
+    label: "On Plinth Level",
+    percent: 25,
+    color: "#F59E0B",
+    status: "due soon",
+  },
+  {
+    label: "On Possession",
+    percent: 15,
+    color: "#3D5AF1",
+    status: null,
+  },
+];
+
+// Bottom milestone bar data
+const milestones = [
+  { label: "Booking 5%", position: "0%" },
+  { label: "Plinth 25%", position: "40%" },
+  { label: "Possession 15%", position: "82%" },
+];
+
+function PaymentCard() {
+  return (
+    <div className="bg-white rounded-3xl border border-[#E3E7F4] hover:border-[#3D5AF1]/30 hover:shadow-[0_8px_40px_rgba(61,90,241,0.07)] transition-all duration-300 p-7 flex flex-col h-full">
+      {/* TOP ROW */}
+      <div className="flex items-start justify-between mb-5">
+        <div className="w-11 h-11 rounded-2xl bg-[#EEF1FE] flex items-center justify-center text-[#3D5AF1]">
+          <CreditCard size={20} />
+        </div>
+        <span className="text-[11px] font-bold px-3 py-1.5 rounded-full bg-[#EEF1FE] text-[#3D5AF1]">
+          Developer + Scale
+        </span>
+      </div>
+
+      {/* TITLE */}
+      <h3 className="text-base font-extrabold text-[#0F1629] mb-2">
+        Stage-wise Payment Tracking
+      </h3>
+
+      {/* DESC */}
+      <p className="text-sm text-[#4A5578] leading-relaxed mb-5">
+        Configure milestones per project. Track every buyer's schedule. Send
+        reminders with payment links.
+      </p>
+
+      {/* PAYMENT STAGES */}
+      <div className="flex flex-col gap-2.5 mb-5">
+        {paymentStages.map((stage) => (
+          <div key={stage.label} className="flex items-center gap-3">
+            {/* Dot */}
+            <div
+              className="w-2.5 h-2.5 rounded-full shrink-0"
+              style={{ background: stage.color }}
+            />
+            {/* Label + badge */}
+            <div className="flex items-center gap-2 flex-1">
+              <span className="text-xs text-[#4A5578]">{stage.label}</span>
+              {stage.status && (
+                <span className="text-[10px] font-bold text-[#F59E0B] bg-[#FEF9C3] px-2 py-0.5 rounded-full">
+                  {stage.status}
+                </span>
+              )}
+            </div>
+            {/* Percent */}
+            <span
+              className="text-xs font-extrabold shrink-0"
+              style={{ color: stage.color }}
+            >
+              {stage.percent}%
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* GRADIENT PROGRESS BAR */}
+      <div className="mt-auto">
+        <div className="h-2 rounded-full overflow-hidden bg-[#E3E7F4]">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: "65%",
+              background:
+                "linear-gradient(90deg, #7C3AED 0%, #F59E0B 50%, #3D5AF1 100%)",
+            }}
+          />
+        </div>
+
+        {/* MILESTONE LABELS */}
+        <div className="flex items-center justify-between mt-2">
+          <span className="text-[10px] text-[#6B7499]">Booking 5%</span>
+          <span className="text-[10px] text-[#6B7499]">Plinth 25%</span>
+          <span className="text-[10px] text-[#6B7499]">Possession 15%</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function SimpleCard({ feature }: { feature: Feature }) {
