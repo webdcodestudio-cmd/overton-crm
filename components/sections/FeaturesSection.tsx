@@ -98,7 +98,7 @@ const features = [
   },
   {
     icon: <Receipt size={20} />,
-    tag: "All Plans",
+    tag: "Growth + Scale",
     tagColor: "bg-[#EEF1FE] text-[#3D5AF1]",
     title: "End-User App & Payment Flow",
     description:
@@ -116,7 +116,7 @@ const features = [
   },
   {
     icon: <Link2 size={20} />,
-    tag: "Growth + Scale",
+    tag: "All Plans",
     tagColor: "bg-[#EEF1FE] text-[#3D5AF1]",
     title: "Property Portal Integration",
     description:

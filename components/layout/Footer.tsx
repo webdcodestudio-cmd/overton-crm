@@ -8,8 +8,8 @@ const contactsDtails = [
   {
     label: "Email",
     icon: <Mail size={14} />,
-    text: "info.overton@gmail.com",
-    href: "mailto:info.overton@gmail.com",
+    text: "info@overton.in",
+    href: "mailto:info@overton.in",
   },
   {
     label: "Phone",
@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="text-sm text-white/60 leading-relaxed mb-7 max-w-xs">
               India's #1 AI-powered real estate CRM — built exclusively for real
               estate developers, brokers, and mandate firms. Close more deals.
-              Manage smarter. From ₹999/month.
+              Manage smarter. From ₹599/month.
             </p>
 
             {/* Trust badges */}
@@ -59,7 +59,6 @@ export default function Footer() {
                   text: "Built for Indian Real Estate",
                 },
                 { icon: <Shield size={14} />, text: "RERA Compliant" },
-                { icon: <Star size={14} />, text: "4.8/5 — 127 Reviews" },
               ].map((badge) => (
                 <div
                   key={badge.text}
