@@ -16,7 +16,7 @@ interface Feature {
 interface Plan {
   id: string;
   name: string;
-  monthlyPrice: number | null;
+  annualPrice: number | null;
   desc: string;
   featured: boolean;
   ctaText: string;
@@ -48,7 +48,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 780,
+        annualPrice: 599,
         desc: "Perfect for getting started with real estate CRM.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -73,7 +73,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 2599,
+        annualPrice: 1999,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -102,7 +102,7 @@ const tabs: TabData[] = [
       {
         id: "professional",
         name: "Professional",
-        monthlyPrice: 3899,
+        annualPrice: 2999,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -131,7 +131,7 @@ const tabs: TabData[] = [
       {
         id: "scale",
         name: "Scale",
-        monthlyPrice: null,
+        annualPrice: null,
         desc: "Tailored for large organizations with complex needs.",
         featured: false,
         ctaText: "Talk to Sales",
@@ -170,7 +170,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 780,
+        annualPrice: 599,
         desc: "Perfect for individual brokers getting started.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -193,7 +193,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 1950,
+        annualPrice: 1499,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -220,7 +220,7 @@ const tabs: TabData[] = [
       {
         id: "professional",
         name: "Professional",
-        monthlyPrice: 3250,
+        annualPrice: 2499,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -248,7 +248,7 @@ const tabs: TabData[] = [
       {
         id: "scale",
         name: "Scale",
-        monthlyPrice: null,
+        annualPrice: null,
         desc: "Tailored for your business needs and scale.",
         featured: false,
         ctaText: "Talk to Sales",
@@ -287,7 +287,7 @@ const tabs: TabData[] = [
       {
         id: "starter",
         name: "Starter",
-        monthlyPrice: 780,
+        annualPrice: 599,
         desc: "Perfect for getting started with CRM.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -312,7 +312,7 @@ const tabs: TabData[] = [
       {
         id: "growth",
         name: "Growth",
-        monthlyPrice: 2599,
+        annualPrice: 1999,
         desc: "Everything you need to grow your real estate business.",
         featured: false,
         ctaText: "Start Free Trial",
@@ -340,7 +340,7 @@ const tabs: TabData[] = [
       {
         id: "Professional",
         name: "Professional",
-        monthlyPrice: 3899,
+        annualPrice: 2999,
         desc: "Advanced tools for larger teams and complex workflows.",
         featured: true,
         ctaText: "Start Free Trial",
@@ -368,7 +368,7 @@ const tabs: TabData[] = [
       {
         id: "scale",
         name: "Scale",
-        monthlyPrice: null,
+        annualPrice: null,
         desc: "Tailored for your business needs and scale.",
         featured: false,
         ctaText: "Talk to Sales",
@@ -445,7 +445,7 @@ const addons: Addon[] = [
 // ── MAIN COMPONENT ──
 export default function PricingSection() {
   const [activeTab, setActiveTab] = useState("developers");
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [isAnnual, setIsAnnual] = useState(true);
 
   const currentTab = tabs.find((t) => t.id === activeTab)!;
 
@@ -543,7 +543,7 @@ export default function PricingSection() {
               "✓ Mass Email Campaign",
               "✓ IVR Integration",
               "✓ Any Other AI Feature Integration",
-              "✓ Customization Charge (upto 5 Fields)",
+              "✓ Customization",
             ].map((item) => (
               <span
                 key={item}
@@ -574,10 +574,11 @@ export default function PricingSection() {
 
 // ── PRICING CARD ──
 function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
-  const annualPrice = plan.monthlyPrice
-    ? Math.round(plan.monthlyPrice * 0.7)
-    : null;
-  const price = isAnnual ? annualPrice : plan.monthlyPrice;
+  const annualPrice = plan.annualPrice;
+
+  const monthlyPrice = annualPrice ? Math.round(annualPrice * 1.3) : null;
+
+  const price = isAnnual ? annualPrice : monthlyPrice;
 
   const regularFeatures = plan.features.filter((f) => !f.isAI);
   const aiFeatures = plan.features.filter((f) => f.isAI);
@@ -631,14 +632,12 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
                 /month +GST
               </span>
             </div>
-            {isAnnual && (
+            {isAnnual && annualPrice && monthlyPrice && (
               <p
                 className={`text-xs mt-1 ${plan.featured ? "text-[#6ee7b7]" : "text-[#0EA05B]"}`}
               >
                 Save ₹
-                {((plan.monthlyPrice! - annualPrice!) * 12).toLocaleString(
-                  "en-IN",
-                )}
+                {((monthlyPrice - annualPrice) * 12).toLocaleString("en-IN")}
                 /yr
               </p>
             )}
@@ -658,6 +657,24 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
       >
         {plan.desc}
       </p>
+
+      {/* CTA */}
+      <Link
+        href={plan.ctaHref}
+        className={`
+          flex items-center justify-center gap-2
+          text-sm font-bold px-5 py-3 mb-4 rounded-xl
+          transition-all duration-200 hover:-translate-y-0.5
+          ${
+            plan.featured
+              ? "bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white shadow-[0_4px_20px_rgba(61,90,241,0.5)]"
+              : "bg-[#F8F9FE] hover:bg-[#EEF1FE] text-[#0F1629] border border-[#E3E7F4] hover:border-[#3D5AF1]/30"
+          }
+        `}
+      >
+        {plan.ctaText}
+        <ArrowRight size={14} />
+      </Link>
 
       {/* DIVIDER */}
       <div
@@ -745,24 +762,6 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
           </ul>
         </div>
       )}
-
-      {/* CTA */}
-      <Link
-        href={plan.ctaHref}
-        className={`
-          flex items-center justify-center gap-2
-          text-sm font-bold px-5 py-3 rounded-xl
-          transition-all duration-200 hover:-translate-y-0.5
-          ${
-            plan.featured
-              ? "bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white shadow-[0_4px_20px_rgba(61,90,241,0.5)]"
-              : "bg-[#F8F9FE] hover:bg-[#EEF1FE] text-[#0F1629] border border-[#E3E7F4] hover:border-[#3D5AF1]/30"
-          }
-        `}
-      >
-        {plan.ctaText}
-        <ArrowRight size={14} />
-      </Link>
     </div>
   );
 }
