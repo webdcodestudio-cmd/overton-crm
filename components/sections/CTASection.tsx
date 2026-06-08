@@ -93,7 +93,7 @@ export default function CTASection() {
           </div>
 
           {/* TRUST POINTS */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {trustPoints.map((point) => (
               <span
                 key={point}

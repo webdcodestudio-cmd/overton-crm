@@ -508,7 +508,7 @@ export default function PricingSection() {
             Annual
           </span>
           <span className="bg-[#EDFBF4] text-[#0EA05B] text-xs font-bold px-3 py-1 rounded-full border border-[#0EA05B]/20">
-            Save 20%
+            Save 30%
           </span>
         </div>
 
