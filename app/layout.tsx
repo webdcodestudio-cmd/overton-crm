@@ -173,6 +173,21 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        {/* ── GOOGLE ANALYTICS ── */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F2WYSX2P64"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F2WYSX2P64');
+          `}
+        </Script>
+
+        {/* ── CALENDLY ── */}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="lazyOnload"
