@@ -2,6 +2,7 @@ import { Calendar, ArrowRight, Check } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
 import CalendlyButton from "../ui/CalendlyButton";
+import TrialButton from "../ui/TrialButton";
 
 const trustPoints = [
   "Free for 30 days",
@@ -59,8 +60,7 @@ export default function CTASection() {
 
           {/* CTA BUTTONS */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
-            <Link
-              href=""
+            <TrialButton
               className="
                 group relative
                 inline-flex items-center gap-2
@@ -78,7 +78,7 @@ export default function CTASection() {
                 className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
                 size={18}
               />
-            </Link>
+            </TrialButton>
 
             <CalendlyButton
               text="Book a Live Demo →"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./HeroSection.module.css";
 import Container from "@/components/ui/Container";
 import CalendlyButton from "../ui/CalendlyButton";
+import TrialButton from "@/components/ui/TrialButton";
 
 const proofItems = [
   {
@@ -79,9 +80,9 @@ export default function HeroSection() {
 
             {/* CTA BUTTONS */}
             <div className={styles.ctaBar}>
-              <Link href="" className={styles.btnPrimary}>
+              <TrialButton className={styles.btnPrimary}>
                 Start Free for 30 Days <ArrowRight size={18} />
-              </Link>
+              </TrialButton>
               <Link
                 href="#ai-features-showcase"
                 className={styles.btnSecondary}

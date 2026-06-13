@@ -25,6 +25,7 @@ import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
+import TrialButton from "../ui/TrialButton";
 
 const tabs = [
   {
@@ -59,7 +60,6 @@ const tabs = [
       },
     ],
     cta: "Start Free Trial ",
-    href: "",
     stats: [
       { value: "100+", label: "Units Managed" },
       { value: "60s", label: "RERA Docs" },
@@ -103,7 +103,6 @@ const tabs = [
       },
     ],
     cta: "Start Free Trial",
-    href: "",
     stats: [
       { value: "5x", label: "Faster Follow-up" },
       { value: "3+", label: "Portals Connected" },
@@ -147,7 +146,6 @@ const tabs = [
       },
     ],
     cta: "Start Free Trial",
-    href: "",
     stats: [
       { value: "∞", label: "Developers" },
       { value: "1", label: "Dashboard" },
@@ -257,8 +255,7 @@ export default function SolutionsSection() {
             </div>
 
             {/* CTA BUTTON — Proper Design */}
-            <Link
-              href={active.href}
+            <TrialButton
               className={`
                 inline-flex items-center gap-2
                 text-white text-sm font-bold
@@ -271,7 +268,7 @@ export default function SolutionsSection() {
             >
               {active.cta}
               <ArrowRightIcon size={14} className="text-[#ffffff]" />
-            </Link>
+            </TrialButton>
           </div>
 
           {/* RIGHT — Visual Card */}

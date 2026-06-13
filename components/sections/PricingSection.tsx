@@ -5,6 +5,7 @@ import { Sparkles, Check, Minus, ArrowRight, Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
+import TrialButton from "@/components/ui/TrialButton";
 
 // ── TYPES ──
 interface Feature {
@@ -659,8 +660,7 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
       </p>
 
       {/* CTA */}
-      <Link
-        href={plan.ctaHref}
+      <TrialButton
         className={`
           flex items-center justify-center gap-2
           text-sm font-bold px-5 py-3 mb-4 rounded-xl
@@ -674,7 +674,7 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
       >
         {plan.ctaText}
         <ArrowRight size={14} />
-      </Link>
+      </TrialButton>
 
       {/* DIVIDER */}
       <div

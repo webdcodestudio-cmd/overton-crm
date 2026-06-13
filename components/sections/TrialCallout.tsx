@@ -1,6 +1,7 @@
 import { Clock12Icon } from "lucide-react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import TrialButton from "@/components/ui/TrialButton";
 
 export default function TrialCallout() {
   return (
@@ -49,13 +50,12 @@ export default function TrialCallout() {
               <Clock12Icon size={12} className="shrink-0" />
               Limited slots this month
             </p>
-            <Link
-              href=""
+            <TrialButton
               className="inline-flex items-center gap-2 bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap 
                relative overflow-hidden animate-glow"
             >
               Start Free Now →
-            </Link>
+            </TrialButton>
           </div>
         </div>
 

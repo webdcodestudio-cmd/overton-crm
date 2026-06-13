@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import { ModalProvider } from "@/components/ui/ModalContext";
 import Script from "next/script";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -172,7 +173,7 @@ export default function RootLayout({
         className={`${bricolageGrotesque.variable} ${instrumentSans.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <ModalProvider>{children}</ModalProvider>
         {/* ── GOOGLE ANALYTICS ── */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-F2WYSX2P64"

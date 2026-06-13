@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useModal } from "./ModalContext";
 
 interface ButtonProps {
   href?: string;
@@ -7,6 +10,7 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  openModal?: boolean; // ← Naya prop
 }
 
 export default function Button({
@@ -16,13 +20,18 @@ export default function Button({
   children,
   onClick,
   className = "",
+  openModal: shouldOpenModal = false,
 }: ButtonProps) {
+  const { openModal } = useModal();
 
-  const base = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 cursor-pointer";
+  const base =
+    "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 cursor-pointer";
 
   const variants = {
-    primary: "bg-brand text-white hover:opacity-90 shadow-sm",
-    outline: "border border-gray-300 text-dark hover:border-brand hover:text-brand bg-white",
+    primary:
+      "bg-brand text-white hover:opacity-90 shadow-sm",
+    outline:
+      "border border-gray-300 text-dark hover:border-brand hover:text-brand bg-white",
   };
 
   const sizes = {
@@ -33,6 +42,23 @@ export default function Button({
 
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
+  // Agar openModal prop hai — click pe modal open karo
+  const handleClick = () => {
+    if (shouldOpenModal) {
+      openModal();
+    }
+    onClick?.();
+  };
+
+  // Agar openModal prop hai — Link nahi, button use karo
+  if (shouldOpenModal) {
+    return (
+      <button onClick={handleClick} className={classes}>
+        {children}
+      </button>
+    );
+  }
+
   if (href) {
     return (
       <Link href={href} className={classes}>
@@ -42,7 +68,7 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button onClick={handleClick} className={classes}>
       {children}
     </button>
   );

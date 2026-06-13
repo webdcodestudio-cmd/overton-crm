@@ -22,6 +22,7 @@ import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CalendlyButton from "../ui/CalendlyButton";
+import TrialButton from "@/components/ui/TrialButton";
 
 // ── ALL 12 FEATURES ──
 const features = [
@@ -510,13 +511,6 @@ const paymentStages = [
   },
 ];
 
-// Bottom milestone bar data
-const milestones = [
-  { label: "Booking 5%", position: "0%" },
-  { label: "Plinth 25%", position: "40%" },
-  { label: "Possession 15%", position: "82%" },
-];
-
 function PaymentCard() {
   return (
     <div className="bg-white rounded-3xl border border-[#E3E7F4] hover:border-[#3D5AF1]/30 hover:shadow-[0_8px_40px_rgba(61,90,241,0.07)] transition-all duration-300 p-7 flex flex-col h-full">
@@ -636,12 +630,9 @@ function CTACard() {
         </p>
       </div>
       <div className="mt-6 flex flex-col gap-3">
-        <a
-          href=""
-          className="flex items-center justify-center gap-2.5 text-center bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white text-sm font-bold px-5 py-3 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(61,90,241,0.4)] hover:-translate-y-0.5"
-        >
+        <TrialButton className="flex items-center justify-center gap-2.5 text-center bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white text-sm font-bold px-5 py-3 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(61,90,241,0.4)] hover:-translate-y-0.5">
           Start Free Trial <ArrowRight size={16} />
-        </a>
+        </TrialButton>
 
         <CalendlyButton
           text="Book a Demo"
