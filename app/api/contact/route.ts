@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     // ── SEND EMAIL ──
     const { data, error } = await resend.emails.send({
-      from: "Overton CRM <onboarding@resend.dev>",
+      from: "Overton CRM <noreply@overton.in/>",
       to: ["crmoverton@gmail.com"],
       subject: `🚀 New Free Trial Request — ${name} (${userTypeLabel})`,
       html: `
