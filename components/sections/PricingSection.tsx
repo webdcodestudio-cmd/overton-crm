@@ -660,21 +660,40 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
       </p>
 
       {/* CTA */}
-      <TrialButton
-        className={`
-          flex items-center justify-center gap-2
-          text-sm font-bold px-5 py-3 mb-4 rounded-xl
-          transition-all duration-200 hover:-translate-y-0.5
-          ${
-            plan.featured
-              ? "bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white shadow-[0_4px_20px_rgba(61,90,241,0.5)]"
-              : "bg-[#F8F9FE] hover:bg-[#EEF1FE] text-[#0F1629] border border-[#E3E7F4] hover:border-[#3D5AF1]/30"
-          }
-        `}
-      >
-        {plan.ctaText}
-        <ArrowRight size={14} />
-      </TrialButton>
+      {plan.ctaHref.startsWith("tel:") ? (
+        <a
+          href={plan.ctaHref}
+          className={`
+            flex items-center justify-center gap-2
+            text-sm font-bold px-5 py-3 mb-4 rounded-xl
+            transition-all duration-200 hover:-translate-y-0.5
+            ${
+              plan.featured
+                ? "bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white shadow-[0_4px_20px_rgba(61,90,241,0.5)]"
+                : "bg-[#F8F9FE] hover:bg-[#EEF1FE] text-[#0F1629] border border-[#E3E7F4] hover:border-[#3D5AF1]/30"
+            }
+          `}
+        >
+          {plan.ctaText}
+          <ArrowRight size={14} />
+        </a>
+      ) : (
+        <TrialButton
+          className={`
+            flex items-center justify-center gap-2
+            text-sm font-bold px-5 py-3 mb-4 rounded-xl
+            transition-all duration-200 hover:-translate-y-0.5
+            ${
+              plan.featured
+                ? "bg-[#3D5AF1] hover:bg-[#2A3FD9] text-white shadow-[0_4px_20px_rgba(61,90,241,0.5)]"
+                : "bg-[#F8F9FE] hover:bg-[#EEF1FE] text-[#0F1629] border border-[#E3E7F4] hover:border-[#3D5AF1]/30"
+            }
+          `}
+        >
+          {plan.ctaText}
+          <ArrowRight size={14} />
+        </TrialButton>
+      )}
 
       {/* DIVIDER */}
       <div

@@ -1,5 +1,4 @@
 import { Clock12Icon } from "lucide-react";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import TrialButton from "@/components/ui/TrialButton";
 
@@ -69,12 +68,14 @@ export default function TrialCallout() {
               </p>
             </div>
 
-            <Link
-              href=""
+            <a
+              href="https://crm.overton.in/#/signup"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#3D5AF1] text-white text-xs font-bold px-4 py-2 rounded-lg whitespace-nowrap animate-glow"
             >
               Start Free →
-            </Link>
+            </a>
           </div>
         </div>
       </Container>

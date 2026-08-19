@@ -1,6 +1,5 @@
 import { ArrowRight, CheckIcon, Play, Sparkle } from "lucide-react";
 import React from "react";
-import Link from "next/link";
 import styles from "./HeroSection.module.css";
 import Container from "@/components/ui/Container";
 import CalendlyButton from "../ui/CalendlyButton";
@@ -83,13 +82,15 @@ export default function HeroSection() {
               <TrialButton className={styles.btnPrimary}>
                 Start Free for 30 Days <ArrowRight size={18} />
               </TrialButton>
-              <Link
-                href="#ai-features-showcase"
+              <a
+                href="https://youtu.be/J4cfQoy35ks"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.btnSecondary}
               >
                 <Play size={14} className="fill-current" />
                 See How AI Works
-              </Link>
+              </a>
             </div>
 
             {/* NOTE */}

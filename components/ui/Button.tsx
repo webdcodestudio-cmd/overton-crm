@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useModal } from "./ModalContext";
 
 interface ButtonProps {
@@ -61,9 +60,14 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+      >
         {children}
-      </Link>
+      </a>
     );
   }
 

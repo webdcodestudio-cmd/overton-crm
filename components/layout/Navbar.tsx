@@ -77,11 +77,10 @@ export default function Navbar() {
         {/* DESKTOP BUTTONS */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <Button
-            href=""
+            href="https://crm.overton.in/#/signup"
             variant="primary"
             size="sm"
             className="flex gap-1"
-            openModal
           >
             Start Free Trial <ArrowRight size={16} />
           </Button>
@@ -116,11 +115,10 @@ export default function Navbar() {
           {/* MOBILE BUTTONS */}
           <div className="flex flex-col gap-3 pt-3">
             <Button
-              href=""
+              href="https://crm.overton.in/#/signup"
               variant="primary"
               size="md"
               className="flex gap-1"
-              openModal
             >
               Start Free Trial <ArrowRight size={16} />
             </Button>
