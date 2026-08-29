@@ -40,7 +40,124 @@ interface Addon {
 // ── TAB DATA ──
 const tabs: TabData[] = [
   // ════════════════════════════
-  // TAB 1 — FOR DEVELOPERS
+  // TAB 1 — FOR BROKERS
+  // ════════════════════════════
+  {
+    id: "brokers",
+    label: "For Brokers",
+    plans: [
+      {
+        id: "starter",
+        name: "Starter",
+        annualPrice: 599,
+        desc: "Perfect for individual brokers getting started.",
+        featured: false,
+        ctaText: "Start Free Trial",
+        ctaHref: "",
+        features: [
+          { text: "Up to 2 Users", included: true },
+          { text: "Task Management", included: true },
+          {
+            text: "Meta, Google Ads, Housing, 99 Acres, Magic Bricks Integration",
+            included: true,
+          },
+          { text: "Mobile App", included: true },
+          { text: "Basic Reports", included: true },
+          { text: "Team Pipeline (Upto 4)", included: true },
+          { text: "AI Lead Scoring", included: true, isAI: true },
+          { text: "AI Follow-up Suggestions", included: true, isAI: true },
+          { text: "Best Time to Contact", included: false, isAI: true },
+        ],
+      },
+      {
+        id: "growth",
+        name: "Growth",
+        annualPrice: 1499,
+        desc: "Everything you need to grow your real estate business.",
+        featured: false,
+        ctaText: "Start Free Trial",
+        ctaHref: "",
+        features: [
+          { text: "Everything in Starter Plan +", included: true },
+          { text: "Up to 5 Users", included: true },
+          { text: "Project Registration Module", included: true },
+          { text: "Website Templates", included: true },
+          { text: "Team Pipeline (Upto 8)", included: true },
+          { text: "Website Lead Integration", included: true },
+          { text: "Email Integration", included: true },
+          {
+            text: "Customizable Dashboards (Upto 5 Fields in one module)",
+            included: true,
+          },
+          { text: "Everything in Starter Plan +", included: true, isAI: true },
+          { text: "AI Sales Forecasting", included: true, isAI: true },
+          { text: "AI Opportunity Insights", included: true, isAI: true },
+          { text: "AI Report Generator", included: true, isAI: true },
+          { text: "AI Dashboard Insights", included: true, isAI: true },
+        ],
+      },
+      {
+        id: "professional",
+        name: "Professional",
+        annualPrice: 2499,
+        desc: "Advanced tools for larger teams and complex workflows.",
+        featured: true,
+        ctaText: "Start Free Trial",
+        ctaHref: "",
+        features: [
+          { text: "Everything in Growth Plan +", included: true },
+          { text: "Up to 10 Users", included: true },
+          { text: "Unlimited Projects", included: true },
+          { text: "Custom Reports ", included: true },
+          { text: "WhatsApp + SMS Integration", included: true },
+          { text: "Mass Email Campaigns Integration", included: true },
+          {
+            text: "Customizable Dashboards (Upto 10 Fields in one module)",
+            included: true,
+          },
+          { text: "Team Pipeline (Upto 15)", included: true },
+          { text: "Smart Site Visit Authentication System", included: true },
+          { text: "Everything in Growth Plan +", included: true, isAI: true },
+          { text: "AI Calling Assistant", included: true, isAI: true },
+          { text: "AI Email Writer Assistant", included: true, isAI: true },
+          { text: "AI Report Generator", included: true, isAI: true },
+          { text: "AI Revenue Forecasting", included: true, isAI: true },
+        ],
+      },
+      {
+        id: "scale",
+        name: "Scale",
+        annualPrice: null,
+        desc: "Tailored for your business needs and scale.",
+        featured: false,
+        ctaText: "Talk to Sales",
+        ctaHref: "tel:+919023016487",
+        features: [
+          { text: "Everything in Professional Plan +", included: true },
+          { text: "Unlimited Users", included: true },
+          { text: "Unlimited Projects", included: true },
+          { text: "Multi-Branch Management", included: true },
+          { text: "IVR Integration", included: true },
+          { text: "Online Meeting Integration", included: true },
+          { text: "Custom Workflows", included: true },
+          { text: "Dedicated Account Manager", included: true },
+          { text: "Priority Support", included: true },
+          {
+            text: "Everything in Professional Plan +",
+            included: true,
+            isAI: true,
+          },
+          { text: "AI Meeting Summary", included: true, isAI: true },
+          { text: "AI Predictive Analytics", included: true, isAI: true },
+          { text: "And much more...", included: true, isAI: true },
+          { text: "AI Call Summary", included: true, isAI: true },
+        ],
+      },
+    ],
+  },
+
+  // ════════════════════════════
+  // TAB 2 — FOR DEVELOPERS
   // ════════════════════════════
   {
     id: "developers",
@@ -134,123 +251,6 @@ const tabs: TabData[] = [
         name: "Scale",
         annualPrice: null,
         desc: "Tailored for large organizations with complex needs.",
-        featured: false,
-        ctaText: "Talk to Sales",
-        ctaHref: "tel:+919023016487",
-        features: [
-          { text: "Everything in Professional Plan +", included: true },
-          { text: "Unlimited Users", included: true },
-          { text: "Unlimited Projects", included: true },
-          { text: "Multi-Branch Management", included: true },
-          { text: "IVR Integration", included: true },
-          { text: "Online Meeting Integration", included: true },
-          { text: "Custom Workflows", included: true },
-          { text: "Dedicated Account Manager", included: true },
-          { text: "Priority Support", included: true },
-          {
-            text: "Everything in Professional Plan +",
-            included: true,
-            isAI: true,
-          },
-          { text: "AI Meeting Summary", included: true, isAI: true },
-          { text: "AI Predictive Analytics", included: true, isAI: true },
-          { text: "And much more...", included: true, isAI: true },
-          { text: "AI Call Summary", included: true, isAI: true },
-        ],
-      },
-    ],
-  },
-
-  // ════════════════════════════
-  // TAB 2 — FOR BROKERS
-  // ════════════════════════════
-  {
-    id: "brokers",
-    label: "For Brokers",
-    plans: [
-      {
-        id: "starter",
-        name: "Starter",
-        annualPrice: 599,
-        desc: "Perfect for individual brokers getting started.",
-        featured: false,
-        ctaText: "Start Free Trial",
-        ctaHref: "",
-        features: [
-          { text: "Up to 2 Users", included: true },
-          { text: "Task Management", included: true },
-          {
-            text: "Meta, Google Ads, Housing, 99 Acres, Magic Bricks Integration",
-            included: true,
-          },
-          { text: "Mobile App", included: true },
-          { text: "Basic Reports", included: true },
-          { text: "Team Pipeline (Upto 4)", included: true },
-          { text: "AI Lead Scoring", included: true, isAI: true },
-          { text: "AI Follow-up Suggestions", included: true, isAI: true },
-          { text: "Best Time to Contact", included: false, isAI: true },
-        ],
-      },
-      {
-        id: "growth",
-        name: "Growth",
-        annualPrice: 1499,
-        desc: "Everything you need to grow your real estate business.",
-        featured: false,
-        ctaText: "Start Free Trial",
-        ctaHref: "",
-        features: [
-          { text: "Everything in Starter Plan +", included: true },
-          { text: "Up to 5 Users", included: true },
-          { text: "Project Registration Module", included: true },
-          { text: "Website Templates", included: true },
-          { text: "Team Pipeline (Upto 8)", included: true },
-          { text: "Website Lead Integration", included: true },
-          { text: "Email Integration", included: true },
-          {
-            text: "Customizable Dashboards (Upto 5 Fields in one module)",
-            included: true,
-          },
-          { text: "Everything in Starter Plan +", included: true, isAI: true },
-          { text: "AI Sales Forecasting", included: true, isAI: true },
-          { text: "AI Opportunity Insights", included: true, isAI: true },
-          { text: "AI Report Generator", included: true, isAI: true },
-          { text: "AI Dashboard Insights", included: true, isAI: true },
-        ],
-      },
-      {
-        id: "professional",
-        name: "Professional",
-        annualPrice: 2499,
-        desc: "Advanced tools for larger teams and complex workflows.",
-        featured: true,
-        ctaText: "Start Free Trial",
-        ctaHref: "",
-        features: [
-          { text: "Everything in Growth Plan +", included: true },
-          { text: "Up to 10 Users", included: true },
-          { text: "Unlimited Projects", included: true },
-          { text: "Custom Reports ", included: true },
-          { text: "WhatsApp + SMS Integration", included: true },
-          { text: "Mass Email Campaigns Integration", included: true },
-          {
-            text: "Customizable Dashboards (Upto 10 Fields in one module)",
-            included: true,
-          },
-          { text: "Team Pipeline (Upto 15)", included: true },
-          { text: "Smart Site Visit Authentication System", included: true },
-          { text: "Everything in Growth Plan +", included: true, isAI: true },
-          { text: "AI Calling Assistant", included: true, isAI: true },
-          { text: "AI Email Writer Assistant", included: true, isAI: true },
-          { text: "AI Report Generator", included: true, isAI: true },
-          { text: "AI Revenue Forecasting", included: true, isAI: true },
-        ],
-      },
-      {
-        id: "scale",
-        name: "Scale",
-        annualPrice: null,
-        desc: "Tailored for your business needs and scale.",
         featured: false,
         ctaText: "Talk to Sales",
         ctaHref: "tel:+919023016487",
@@ -445,7 +445,7 @@ const addons: Addon[] = [
 
 // ── MAIN COMPONENT ──
 export default function PricingSection() {
-  const [activeTab, setActiveTab] = useState("developers");
+  const [activeTab, setActiveTab] = useState("brokers");
   const [isAnnual, setIsAnnual] = useState(true);
 
   const currentTab = tabs.find((t) => t.id === activeTab)!;
@@ -525,7 +525,12 @@ export default function PricingSection() {
         {/* PRICING CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
           {currentTab.plans.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} isAnnual={isAnnual} />
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              isAnnual={isAnnual}
+              comingSoon={activeTab === "developers" || activeTab === "mandate"}
+            />
           ))}
         </div>
 
@@ -574,7 +579,15 @@ export default function PricingSection() {
 }
 
 // ── PRICING CARD ──
-function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
+function PricingCard({
+  plan,
+  isAnnual,
+  comingSoon = false,
+}: {
+  plan: Plan;
+  isAnnual: boolean;
+  comingSoon?: boolean;
+}) {
   const annualPrice = plan.annualPrice;
 
   const monthlyPrice = annualPrice ? Math.round(annualPrice * 1.3) : null;
@@ -596,6 +609,15 @@ function PricingCard({ plan, isAnnual }: { plan: Plan; isAnnual: boolean }) {
         }
       `}
     >
+      {/* COMING SOON BLUR OVERLAY */}
+      {comingSoon && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center backdrop-blur-sm bg-white/60 rounded-3xl">
+          <span className="bg-[#0F1629] text-white font-bold text-sm px-4 py-2 rounded-full">
+            Coming Soon
+          </span>
+        </div>
+      )}
+
       {/* FEATURED BADGE */}
       {plan.featured && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">

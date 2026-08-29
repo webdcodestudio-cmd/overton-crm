@@ -29,49 +29,6 @@ import TrialButton from "../ui/TrialButton";
 
 const tabs = [
   {
-    id: "developers",
-    label: "For Developers",
-    icon: <Building2 size={16} />,
-    badge: "Builder & Developer",
-    badgeColor: "bg-[#3D5AF1] text-white",
-    heading: "Close More Units. Manage Every Project From One Dashboard.",
-    description:
-      "Overton gives real estate developers a complete command centre — from the first 99acres inquiry to the final possession cheque. Every lead, every unit, every payment, every document. One platform.",
-    features: [
-      {
-        icon: <Target size={16} />,
-        title: "AI Lead Qualification",
-        desc: "AI calls every new lead, qualifies budget & intent before your team picks up the phone.",
-      },
-      {
-        icon: <Package size={16} />,
-        title: "Inventory Management",
-        desc: "Block-by-block, unit-wise tracking. No double bookings. Auto-updated when deals close.",
-      },
-      {
-        icon: <ClipboardList size={16} />,
-        title: "RERA Document Generation",
-        desc: "KYC, allotment letters, agreements — generated as PDFs in 60 seconds. RERA-ready.",
-      },
-      {
-        icon: <CircleDollarSign size={16} />,
-        title: "Stage-wise Payment Tracking",
-        desc: "Know exactly which buyers owe what, and when. Overdue alerts sent automatically.",
-      },
-    ],
-    cta: "Start Free Trial ",
-    stats: [
-      { value: "100+", label: "Units Managed" },
-      { value: "60s", label: "RERA Docs" },
-      { value: "0", label: "Double Bookings" },
-    ],
-    accentColor: "from-blue-50 to-indigo-50",
-    iconBg: "bg-brand-light",
-    iconColor: "text-brand",
-    btnClass:
-      "bg-brand hover:bg-brand-deep shadow-[0_4px_20px_rgba(61,90,241,0.35)] hover:shadow-[0_6px_28px_rgba(61,90,241,0.5)]",
-  },
-  {
     id: "brokers",
     label: "For Brokers",
     icon: <Handshake size={16} />,
@@ -113,6 +70,49 @@ const tabs = [
     iconColor: "text-green",
     btnClass:
       "bg-[#0EA05B] hover:bg-[#0b8a4e] shadow-[0_4px_20px_rgba(14,160,91,0.35)] hover:shadow-[0_6px_28px_rgba(14,160,91,0.5)]",
+  },
+  {
+    id: "developers",
+    label: "For Developers",
+    icon: <Building2 size={16} />,
+    badge: "Builder & Developer",
+    badgeColor: "bg-[#3D5AF1] text-white",
+    heading: "Close More Units. Manage Every Project From One Dashboard.",
+    description:
+      "Overton gives real estate developers a complete command centre — from the first 99acres inquiry to the final possession cheque. Every lead, every unit, every payment, every document. One platform.",
+    features: [
+      {
+        icon: <Target size={16} />,
+        title: "AI Lead Qualification",
+        desc: "AI calls every new lead, qualifies budget & intent before your team picks up the phone.",
+      },
+      {
+        icon: <Package size={16} />,
+        title: "Inventory Management",
+        desc: "Block-by-block, unit-wise tracking. No double bookings. Auto-updated when deals close.",
+      },
+      {
+        icon: <ClipboardList size={16} />,
+        title: "RERA Document Generation",
+        desc: "KYC, allotment letters, agreements — generated as PDFs in 60 seconds. RERA-ready.",
+      },
+      {
+        icon: <CircleDollarSign size={16} />,
+        title: "Stage-wise Payment Tracking",
+        desc: "Know exactly which buyers owe what, and when. Overdue alerts sent automatically.",
+      },
+    ],
+    cta: "Start Free Trial ",
+    stats: [
+      { value: "100+", label: "Units Managed" },
+      { value: "60s", label: "RERA Docs" },
+      { value: "0", label: "Double Bookings" },
+    ],
+    accentColor: "from-blue-50 to-indigo-50",
+    iconBg: "bg-brand-light",
+    iconColor: "text-brand",
+    btnClass:
+      "bg-brand hover:bg-brand-deep shadow-[0_4px_20px_rgba(61,90,241,0.35)] hover:shadow-[0_6px_28px_rgba(61,90,241,0.5)]",
   },
   {
     id: "mandate",
@@ -160,7 +160,7 @@ const tabs = [
 ];
 
 export default function SolutionsSection() {
-  const [activeTab, setActiveTab] = useState("developers");
+  const [activeTab, setActiveTab] = useState("brokers");
   const active = tabs.find((t) => t.id === activeTab)!;
 
   return (
